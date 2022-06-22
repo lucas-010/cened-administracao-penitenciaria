@@ -10,7 +10,7 @@ export default function Header() {
       </div>
 
       <div className='lg:block md:block hidden mt-5 mr-2'>
-        <span className='text-lg font-bold text-white'>Acesso restrito às Secretarias Conveniadas de Administração Penitenciária!</span>
+        <span className='text-lg font-bold text-white'>Acesso restrito às Secretarias de Administração Penitenciária!</span>
       </div>
     </div>
   )

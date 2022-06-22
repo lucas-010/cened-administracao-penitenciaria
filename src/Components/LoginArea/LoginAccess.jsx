@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LoginAccess() {
   return (
-    <div className='bg-[#012060] flex items-center justify-center w-screen p-8'>
+    <div className='bg-[#012060] flex items-center justify-center w-screen p-6'>
         <form className='flex lg:flex-row md:flex-row flex-col'>
             <div className=''>
                 <label htmlFor="user-name" className='text-xl font-bold text-white'>Usuário</label> <br />
