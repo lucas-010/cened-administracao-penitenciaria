@@ -53,25 +53,25 @@ export default function Filters() {
 
             <Grid item xs={10} md={1.5}>
                 <LocalizationProvider adapterLocale={ptBR} dateAdapter={AdapterDateFns}>
-                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/yyyy" onChange={(e)=> setDateRegistration1(e)} label='Matrículas (a partir)' value={dateRegistration1} renderInput={(props)=> <TextField {...props}/>}/>
+                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/aaaa" onChange={(e)=> setDateRegistration1(e)} label='Matrículas (a partir)' value={dateRegistration1} renderInput={(props)=> <TextField {...props}/>}/>
                 </LocalizationProvider>
             </Grid>
 
             <Grid item xs={10} md={1.5}>
                 <LocalizationProvider adapterLocale={ptBR} dateAdapter={AdapterDateFns}>
-                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/yyyy" onChange={(e)=> setDateRegistration2(e)} label='Matrículas (até)' value={dateRegistration2} renderInput={(props)=> <TextField {...props}/>}/>
+                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/aaaa" onChange={(e)=> setDateRegistration2(e)} label='Matrículas (até)' value={dateRegistration2} renderInput={(props)=> <TextField {...props}/>}/>
                 </LocalizationProvider>
             </Grid>
 
             <Grid item xs={10} md={1.5}>
                 <LocalizationProvider adapterLocale={ptBR} dateAdapter={AdapterDateFns}>
-                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/yyyy" onChange={(e)=> setDateRegistration3(e)} label='Início (a partir)' value={dateRegistration3} renderInput={(props)=> <TextField {...props}/>}/>
+                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/aaaa" onChange={(e)=> setDateRegistration3(e)} label='Início (a partir)' value={dateRegistration3} renderInput={(props)=> <TextField {...props}/>}/>
                 </LocalizationProvider>
             </Grid>
 
             <Grid item xs={10} md={1.5}>
                 <LocalizationProvider adapterLocale={ptBR} dateAdapter={AdapterDateFns}>
-                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/yyyy" onChange={(e)=> setDateRegistration4(e)} label='Início (até)' value={dateRegistration4} renderInput={(props)=> <TextField {...props}/>}/>
+                    <DesktopDatePicker className='w-full' inputFormat="dd/MM/aaaa" onChange={(e)=> setDateRegistration4(e)} label='Início (até)' value={dateRegistration4} renderInput={(props)=> <TextField {...props}/>}/>
                 </LocalizationProvider>
             </Grid>
 
