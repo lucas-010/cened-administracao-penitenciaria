@@ -55,7 +55,7 @@ export default function TableContent() {
             course: 'Inglês Anvaçado',
             init: '12/12/2012',
             end: '22/22/2022',
-            situation: 'APROVADO'
+            situation: 'Aprovado'
         },
         {
           datam: '12/12/2012',
@@ -63,7 +63,7 @@ export default function TableContent() {
           course: 'Inglês Anvaçado',
           init: '12/12/2012',
           end: '22/22/2022',
-          situation: 'APROVADO'
+          situation: 'Em Andamento'
       },
         {
           datam: '12/12/2012',
@@ -71,7 +71,7 @@ export default function TableContent() {
           course: 'Inglês Anvaçado',
           init: '12/12/2012',
           end: '22/22/2022',
-          situation: 'APROVADO'
+          situation: 'Aprovado'
       },
       {
         datam: '12/12/2012',
@@ -79,7 +79,7 @@ export default function TableContent() {
         course: 'Inglês Anvaçado',
         init: '12/12/2012',
         end: '22/22/2022',
-        situation: 'APROVADO'
+        situation: 'Em Andamento'
     },
     {
       datam: '12/12/2012',
@@ -87,90 +87,8 @@ export default function TableContent() {
       course: 'Inglês Anvaçado',
       init: '12/12/2012',
       end: '22/22/2022',
-      situation: 'APROVADO'
-  },
-  {
-    datam: '12/12/2012',
-    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-    course: 'Inglês Anvaçado',
-    init: '12/12/2012',
-    end: '22/22/2022',
-    situation: 'APROVADO'
-  },
-
-  {
-    datam: '12/12/2012',
-    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-    course: 'Inglês Anvaçado',
-    init: '12/12/2012',
-    end: '22/22/2022',
-    situation: 'APROVADO'
-  },{
-    datam: '12/12/2012',
-    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-    course: 'Inglês Anvaçado',
-    init: '12/12/2012',
-    end: '22/22/2022',
-    situation: 'APROVADO'
-  },
-  {
-    datam: '12/12/2012',
-    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-    course: 'Inglês Anvaçado',
-    init: '12/12/2012',
-    end: '22/22/2022',
-    situation: 'APROVADO'
-  },
-  {
-    datam: '12/12/2012',
-    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-    course: 'Inglês Anvaçado',
-    init: '12/12/2012',
-    end: '22/22/2022',
-    situation: 'APROVADO'
-},
-{
-  datam: '12/12/2012',
-  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-  course: 'Inglês Anvaçado',
-  init: '12/12/2012',
-  end: '22/22/2022',
-  situation: 'APROVADO'
-},
-{
-  datam: '12/12/2012',
-  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-  course: 'Inglês Anvaçado',
-  init: '12/12/2012',
-  end: '22/22/2022',
-  situation: 'APROVADO'
-},
-{
-  datam: '12/12/2012',
-  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-  course: 'Inglês Anvaçado',
-  init: '12/12/2012',
-  end: '22/22/2022',
-  situation: 'APROVADO'
-},
-{
-  datam: '12/12/2012',
-  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-  course: 'Inglês Anvaçado',
-  init: '12/12/2012',
-  end: '22/22/2022',
-  situation: 'APROVADO'
-},
-{
-  datam: '12/12/2012',
-  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
-  course: 'Inglês Anvaçado',
-  init: '12/12/2012',
-  end: '22/22/2022',
-  situation: 'APROVADO'
-},
-
-    ])
+      situation: 'Aprovado'
+  },])
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [students, setStudents] = useState([])
@@ -250,9 +168,9 @@ export default function TableContent() {
                       const value = row[column.id];
                       return (
                         <TableCell className={`${column.id === 'datam' ? 'w-40 border-l-0' : 'border-l border-gray-300'}`} key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
+                          <p className={`${value === 'Aprovado' ? 'text-purple-700 font-semibold' : 'text-black'} ${value === 'Em Andamento' ? 'text-green-500 font-semibold' : 'text-black'}`}>{column.format && typeof value === 'number'
                             ? column.format(value)
-                            : value}
+                            : value}</p>
                         </TableCell>
                       );
                     })}

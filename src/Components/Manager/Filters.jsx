@@ -8,10 +8,10 @@ import {AiFillPrinter} from 'react-icons/ai'
 import React, { useState } from 'react'
 
 export default function Filters() {
-    const [dateRegistration1, setDateRegistration1] = useState('14/07/2022')
-    const [dateRegistration2, setDateRegistration2] = useState('14/07/2022')
-    const [dateRegistration3, setDateRegistration3] = useState('14/07/2022')
-    const [dateRegistration4, setDateRegistration4] = useState('14/07/2022')
+    const [dateRegistration1, setDateRegistration1] = useState('')
+    const [dateRegistration2, setDateRegistration2] = useState('')
+    const [dateRegistration3, setDateRegistration3] = useState('')
+    const [dateRegistration4, setDateRegistration4] = useState('')
   return (
     <div className='m-10'>
         <Grid container spacing={2}>
