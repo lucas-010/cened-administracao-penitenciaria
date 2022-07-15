@@ -13,7 +13,7 @@ const columns = [
     {
       id: 'datam',
       label: 'Data Matrícula',
-      minWidth: 100
+      minWidth: 80
     },
     { 
       id: 'student', 
@@ -56,45 +56,191 @@ export default function TableContent() {
             init: '12/12/2012',
             end: '22/22/2022',
             situation: 'APROVADO'
-        }
+        },
+        {
+          datam: '12/12/2012',
+          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+          course: 'Inglês Anvaçado',
+          init: '12/12/2012',
+          end: '22/22/2022',
+          situation: 'APROVADO'
+      },
+        {
+          datam: '12/12/2012',
+          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+          course: 'Inglês Anvaçado',
+          init: '12/12/2012',
+          end: '22/22/2022',
+          situation: 'APROVADO'
+      },
+      {
+        datam: '12/12/2012',
+        student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+        course: 'Inglês Anvaçado',
+        init: '12/12/2012',
+        end: '22/22/2022',
+        situation: 'APROVADO'
+    },
+    {
+      datam: '12/12/2012',
+      student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+      course: 'Inglês Anvaçado',
+      init: '12/12/2012',
+      end: '22/22/2022',
+      situation: 'APROVADO'
+  },
+  {
+    datam: '12/12/2012',
+    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+    course: 'Inglês Anvaçado',
+    init: '12/12/2012',
+    end: '22/22/2022',
+    situation: 'APROVADO'
+  },
+
+  {
+    datam: '12/12/2012',
+    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+    course: 'Inglês Anvaçado',
+    init: '12/12/2012',
+    end: '22/22/2022',
+    situation: 'APROVADO'
+  },{
+    datam: '12/12/2012',
+    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+    course: 'Inglês Anvaçado',
+    init: '12/12/2012',
+    end: '22/22/2022',
+    situation: 'APROVADO'
+  },
+  {
+    datam: '12/12/2012',
+    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+    course: 'Inglês Anvaçado',
+    init: '12/12/2012',
+    end: '22/22/2022',
+    situation: 'APROVADO'
+  },
+  {
+    datam: '12/12/2012',
+    student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+    course: 'Inglês Anvaçado',
+    init: '12/12/2012',
+    end: '22/22/2022',
+    situation: 'APROVADO'
+},
+{
+  datam: '12/12/2012',
+  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+  course: 'Inglês Anvaçado',
+  init: '12/12/2012',
+  end: '22/22/2022',
+  situation: 'APROVADO'
+},
+{
+  datam: '12/12/2012',
+  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+  course: 'Inglês Anvaçado',
+  init: '12/12/2012',
+  end: '22/22/2022',
+  situation: 'APROVADO'
+},
+{
+  datam: '12/12/2012',
+  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+  course: 'Inglês Anvaçado',
+  init: '12/12/2012',
+  end: '22/22/2022',
+  situation: 'APROVADO'
+},
+{
+  datam: '12/12/2012',
+  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+  course: 'Inglês Anvaçado',
+  init: '12/12/2012',
+  end: '22/22/2022',
+  situation: 'APROVADO'
+},
+{
+  datam: '12/12/2012',
+  student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+  course: 'Inglês Anvaçado',
+  init: '12/12/2012',
+  end: '22/22/2022',
+  situation: 'APROVADO'
+},
+
     ])
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [students, setStudents] = useState([])
     const [searchValue, setSearchValue] = useState('')
+    const handleChangePage = (event, newPage) => {
+      setPage(newPage);
+    };
+    const handleChangeRowsPerPage = (event) => {
+      setRowsPerPage(+event.target.value);
+      setPage(0);
+    };
+  
   return (
     <Grid>
-    <Paper className='mt-5' sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 740 }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <TableContainer sx={{ maxHeight: 740, width: '100%' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               <TableCell>
-                Data Matrícula
+                <p className='text-base font-semibold'>Data Matrícula</p>
               </TableCell>
 
               <TableCell>
-                Estudante
+                <p className="text-base font-semibold">Estudante</p>
               </TableCell>
 
               <TableCell>
-                Curso
+                <p className="text-base font-semibold">Curso</p>
               </TableCell>
 
               <TableCell>
-                Início
+                <p className="text-base font-semibold">Início</p>
               </TableCell>
 
               <TableCell>
-                Término
+                <p className="text-base font-semibold">Término</p>
               </TableCell>
 
               <TableCell>
-                Situação
+                <p className="text-base font-semibold">Situação</p>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
+          <TableRow sx={{backgroundColor: 'rgb(255, 236, 178)'}}>
+              <TableCell>
+                
+              </TableCell>
+              <TableCell>
+                <h2 className='font-bold text-[#56645e] text-base'>PENITENCIÁRIA: ARUANA</h2>
+              </TableCell>
+
+              <TableCell className='border-l'>
+                <h2 className='font-bold text-[#56645e] text-base'>UF: RO</h2>
+              </TableCell>
+
+
+              <TableCell>
+                
+              </TableCell>
+
+              <TableCell>
+                
+              </TableCell>
+
+              <TableCell>
+                
+              </TableCell>
+            </TableRow>
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
@@ -103,7 +249,7 @@ export default function TableContent() {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell className={`${column.id === 'datam' ? 'w-40 border-l-0' : 'border-l border-gray-300'}`} key={column.id} align={column.align}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
@@ -122,6 +268,8 @@ export default function TableContent() {
         count={rows.length}
         rowsPerPage={rowsPerPage}
         page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Paper>
   </Grid>
