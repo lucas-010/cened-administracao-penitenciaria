@@ -168,7 +168,7 @@ export default function TableContent() {
                       const value = row[column.id];
                       return (
                         <TableCell className={`${column.id === 'datam' ? 'w-40 border-l-0' : 'border-l border-gray-300'}`} key={column.id} align={column.align}>
-                          <p className={`${value === 'Aprovado' ? 'text-purple-700 font-semibold' : 'text-black'} ${value === 'Em Andamento' ? 'text-green-500 font-semibold' : 'text-black'}`}>{column.format && typeof value === 'number'
+                          <p className={`${value === 'Aprovado' ? 'text-purple-700 font-semibold' : ''} ${value === 'Em Andamento' ? 'text-green-500 font-semibold' : ''}`}>{column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}</p>
                         </TableCell>
