@@ -51,7 +51,7 @@ export default function TableContent() {
     const [rows, setRows] = useState([
         {
             datam: '12/12/2012',
-            student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+            student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220 | INFOPEN: 9999999	',
             course: 'Inglês Anvaçado',
             init: '12/12/2012',
             end: '22/22/2022',
@@ -59,7 +59,7 @@ export default function TableContent() {
         },
         {
           datam: '12/12/2012',
-          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220 | INFOPEN: 9999999	',
           course: 'Inglês Anvaçado',
           init: '12/12/2012',
           end: '22/22/2022',
@@ -67,7 +67,7 @@ export default function TableContent() {
       },
         {
           datam: '12/12/2012',
-          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+          student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220 | INFOPEN: 9999999	',
           course: 'Inglês Anvaçado',
           init: '12/12/2012',
           end: '22/22/2022',
@@ -75,7 +75,7 @@ export default function TableContent() {
       },
       {
         datam: '12/12/2012',
-        student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+        student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220 | INFOPEN: 9999999	',
         course: 'Inglês Anvaçado',
         init: '12/12/2012',
         end: '22/22/2022',
@@ -83,7 +83,7 @@ export default function TableContent() {
     },
     {
       datam: '12/12/2012',
-      student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220	',
+      student: 'CURTIS ALAN LISBOA GARCÊS | CPF: 22059741220 | INFOPEN: 9999999',
       course: 'Inglês Anvaçado',
       init: '12/12/2012',
       end: '22/22/2022',

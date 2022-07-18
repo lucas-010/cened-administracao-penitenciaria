@@ -16,7 +16,23 @@ export default function Filters() {
     <div className='m-10'>
         <Grid container spacing={2}>
             <Grid item xs={10} md={7}>
-                <TextField className='w-full' label='Digite o Nome da Penitenciária'/>
+                <TextField className='w-full' label='Digite o Nome da Penitenciária' select>
+                    <MenuItem value={1}>
+                        Penitenciária 1
+                    </MenuItem>
+
+                    <MenuItem value={2}>
+                        Penitenciária 2
+                    </MenuItem>
+
+                    <MenuItem value={3}>
+                        Penitenciária 3
+                    </MenuItem>
+
+                    <MenuItem value={4}>
+                        Penitenciária 4
+                    </MenuItem>
+                </TextField>
             </Grid>
 
             <Grid item xs={10} md={4}>
@@ -76,11 +92,11 @@ export default function Filters() {
             </Grid>
 
             <Grid item xs={10}  md={1}>
-                <button className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ff1b67] hover:shadow-xl text-white rounded-lg justify-center p-2 shadow-lg flex items-center bg-[#ff4181]'><MdFilterAlt size={20}/>FILTRAR</button>
+                <button className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ff1b67] hover:shadow-xl text-white rounded-md justify-center p-2 shadow-lg flex items-center bg-[#ff4181]'><MdFilterAlt size={20}/>FILTRAR</button>
             </Grid>
 
             <Grid item xs={10}  md={2}>
-                <button className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ebe6e6] hover:shadow-xl rounded-lg justify-center p-2 shadow-lg flex items-center bg-[#f0f0f0]'><AiFillPrinter size={20}/>Imprimir Página Atual</button>
+                <button className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ebe6e6] hover:shadow-xl rounded-md justify-center p-2 shadow-lg flex items-center bg-[#f0f0f0]'><AiFillPrinter size={20}/>Imprimir Página Atual</button>
             </Grid>
 
             <Grid item xs={10} md={11}>
