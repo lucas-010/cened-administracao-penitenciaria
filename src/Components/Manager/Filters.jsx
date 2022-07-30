@@ -16,13 +16,18 @@ export default function Filters({searchEnter, filterData}) {
     const [date4, setDate4] = useState('')
     const [statusCourse, setStatusCourse] = useState(0)
     const [searchValue, setSearchValue] = useState('')
+    const [idPeni, setIdPeni] = useState(45)
   return (
     <div className='m-10'>
         <Grid container spacing={2}>
             <Grid item xs={10} md={7}>
-                <TextField select label='Selecione a Penitenciária' className='w-full'>
+                <TextField value={idPeni} onChange={(e)=> setIdPeni(e.target.value)} select label='Selecione a Penitenciária' className='w-full'>
                     <MenuItem value={45}>
                         Penitenciária Aruana
+                    </MenuItem>
+
+                    <MenuItem value={185}>
+                        Cadeia Pública de Colorado do Oeste
                     </MenuItem>
                 </TextField>
             </Grid>
@@ -80,7 +85,7 @@ export default function Filters({searchEnter, filterData}) {
             </LocalizationProvider>
 
             <Grid item xs={10}  md={1}>
-                <button onClick={()=> {filterData(date1, date2, date3, date4, statusCourse); setSearchValue('')}} className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ff1b67] hover:shadow-xl text-white rounded-md justify-center p-2 shadow-lg flex items-center bg-[#ff4181]'><MdFilterAlt size={20}/>FILTRAR</button>
+                <button onClick={()=> {filterData(date1, date2, date3, date4, statusCourse, idPeni); setSearchValue('')}} className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ff1b67] hover:shadow-xl text-white rounded-md justify-center p-2 shadow-lg flex items-center bg-[#ff4181]'><MdFilterAlt size={20}/>FILTRAR</button>
             </Grid>
 
             <Grid item xs={10}  md={2}>

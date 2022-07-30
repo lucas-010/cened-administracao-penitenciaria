@@ -44,9 +44,8 @@ const columns = [
     },
   ];
 
-export default function TableContent({searchValueChange, date1, date2, date3, date4, statusCourse}) {
+export default function TableContent({searchValueChange, date1, date2, date3, date4, statusCourse, idPeni}) {
     const [rows, setRows] = useState([])
-    const [idPeni, setIdPeni] = useState(45)
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const handleChangePage = (event, newPage) => {

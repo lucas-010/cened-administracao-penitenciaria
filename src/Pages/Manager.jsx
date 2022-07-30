@@ -11,6 +11,7 @@ export default function Manager() {
   const [date2, setDate2] = useState('')
   const [date3, setDate3] = useState('')
   const [date4, setDate4] = useState('')
+  const [idPeniChange, setIdPeniChange] = useState(45)
   const searchEnter = (value)=>{
     setSearchValueChange(value)
     setDate1('')
@@ -18,20 +19,21 @@ export default function Manager() {
     setDate3('')
     setDate4('')
   }
-  const filterData = (d1, d2, d3, d4, statusCourse)=>{
+  const filterData = (d1, d2, d3, d4, statusCourse, idPeni)=>{
     d1 !== '' ? setDate1(new Date(d1).toLocaleDateString('en-us')) : setDate1('')
     d2 !== '' ? setDate2(new Date(d2).toLocaleDateString('en-us')) : setDate2('')
     d3 !== '' ? setDate3(new Date(d3).toLocaleDateString('en-us')) : setDate3('')
     d4 !== '' ? setDate4(new Date(d4).toLocaleDateString('en-us')) : setDate4('')
     setSearchValueChange('')
     setStatusCourseChange(statusCourse)
+    setIdPeniChange(idPeni)
   }
   return (
     <div className=''>
         <Header/>
         <Title/>
         <Filters filterData={filterData} searchEnter={searchEnter}/>
-        <Table statusCourse={statusCourseChange} date1={date1} date2={date2} date3={date3} date4={date4} searchValueChange={searchValueChange}/>
+        <Table idPeni={idPeniChange} statusCourse={statusCourseChange} date1={date1} date2={date2} date3={date3} date4={date4} searchValueChange={searchValueChange}/>
     </div>
   )
 }
