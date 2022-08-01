@@ -126,11 +126,11 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
                 
               </td>
               <td className='p-2'>
-                <h2 className='font-bold text-[#56645e] text-base'>PENITENCIÁRIA: ARUANA</h2>
+                <h2 className='font-bold text-[#56645e] text-base'>{namePeni}</h2>
               </td>
 
               <td className='border-l'>
-                <h2 className='font-bold text-[#56645e] text-base'>UF: RO</h2>
+                <h2 className='font-bold text-[#56645e] text-base'>UF: {ufPeni}</h2>
               </td>
 
 
