@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
-import { Grid } from '@mui/material';
 import axios from 'axios';
 import './Print.css'
 
@@ -179,6 +177,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
         </table>
       </TableContainer>
       <TablePagination
+        labelRowsPerPage='Itens por Página'
         className='print:hidden'
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
