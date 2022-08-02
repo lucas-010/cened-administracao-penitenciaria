@@ -62,7 +62,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
         rowsProvisory.push({
           id: student.aluno.id,
           datam: student.dataMatricula ? new Date(student.dataMatricula).toLocaleDateString('pt-br') : 'N/D',
-          name: `${student.aluno.nome} | ${student.aluno.cpf}`,
+          name: `${student.aluno.nome} | CPF: ${student.aluno.cpf}`,
           course: `${student.curso.codigo} | ${student.curso.nome}`,
           init: student.inicioCurso ? new Date(student.inicioCurso).toLocaleDateString('pt-br') : 'N/D',
           end: student.terminoCurso ? new Date(student.terminoCurso).toLocaleDateString('pt-br') : 'N/D',
@@ -73,7 +73,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
     }
   useEffect(()=>{
     setPage(0)
-    axios.get(`${api}/documentos/consultas/matriculas?IdPenitenciaria=${idPeni}${searchValueChange !== '' ? `&Search=${searchValueChange}` : ''}${statusCourse !== 0 ? `&StatusCurso=${statusCourse}` : ''}${date1 !== '' ? `&PeriodoDataMatricula.Inicio=${date1}` : ''}${date2 ? `&PeriodoDataMatricula.Final=${date2}` : ''}${date3 !== '' ? `&PeriodoDataInicioCurso.Inicio=${date3}` : ''}${date4 !== '' ? `&PeriodoDataInicioCurso.Final=${date4}` : ''}&limit=500`).then(response=>{
+    axios.get(`${api}/documentos/consultas/matriculas?IdPenitenciaria=${idPeni}${searchValueChange !== '' ? `&Search=${searchValueChange}` : ''}${statusCourse !== 0 ? `&StatusCurso=${statusCourse}` : ''}${date1 !== '' ? `&PeriodoDataMatricula.Inicio=${date1}` : ''}${date2 ? `&PeriodoDataMatricula.Final=${date2}` : ''}${date3 !== '' ? `&PeriodoDataInicioCurso.Inicio=${date3}` : ''}${date4 !== '' ? `&PeriodoDataInicioCurso.Final=${date4}` : ''}&limit=1000`).then(response=>{
       formatStudentsAddRow(response.data)
     })
   }, [idPeni, date1, date2, date3, date4, searchValueChange, statusCourse])
@@ -151,7 +151,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <tr className='hover:bg-gray-100 print:rounded-lg print:border border-gray-300 print:mt-5 print:flex-col print:flex' key={row.code}>
+                  <tr className='hover:bg-gray-100 print:rounded-lg print:border border-gray-300 print:mt-2 print:flex-col print:flex' key={row.code}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

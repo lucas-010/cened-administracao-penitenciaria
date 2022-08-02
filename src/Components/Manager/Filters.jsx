@@ -9,7 +9,11 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 
+
+const api = process.env.REACT_APP_API_KEY
 export default function Filters({searchEnter, filterData}) {
+    const [penitentiaries, setPenitentiaries] = useState([])
+    const [uf, setUf] = useState('Ro')
     const [date1, setDate1] = useState('')
     const [date2, setDate2] = useState('')
     const [date3, setDate3] = useState('')
@@ -17,18 +21,24 @@ export default function Filters({searchEnter, filterData}) {
     const [statusCourse, setStatusCourse] = useState(0)
     const [searchValue, setSearchValue] = useState('')
     const [idPeni, setIdPeni] = useState(45)
+
+    useEffect(()=>{
+        axios.get(`${api}/combos/filtros/penitenciarias?Uf=${uf}&Page=1&Limit=100&SortingField=&Desc=False`).then(response=>{
+            setPenitentiaries(response.data)
+        })
+    }, [])
   return (
     <div className='m-10'>
         <Grid container spacing={2}>
             <Grid item xs={10} md={7}>
                 <TextField value={idPeni} onChange={(e)=> setIdPeni(e.target.value)} select label='Selecione a Penitenciária' className='w-full'>
-                    <MenuItem value={45}>
-                        Penitenciária Aruana
-                    </MenuItem>
-
-                    <MenuItem value={185}>
-                        Cadeia Pública de Colorado do Oeste
-                    </MenuItem>
+                    {penitentiaries.map((peni, key)=>{
+                        return(
+                            <MenuItem key={key} value={peni.id}>
+                                {peni.text}
+                            </MenuItem>
+                        )
+                    })}
                 </TextField>
             </Grid>
 
@@ -92,7 +102,7 @@ export default function Filters({searchEnter, filterData}) {
                 <button onClick={()=> window.print()} className='text-lg font-bold w-full transition-colors mt-2 hover:bg-[#ebe6e6] hover:shadow-xl rounded-md justify-center p-2 shadow-lg flex items-center bg-[#f0f0f0]'><AiFillPrinter size={20}/>Imprimir Página Atual</button>
             </Grid>
 
-            <Grid item xs={10} md={11}>
+            <Grid item xs={10} className='print:hidden' md={11}>
                 <TextField variant='standard' onKeyUp={(e)=> e.code === 'Enter' ? searchEnter(searchValue) : false} value={searchValue} onChange={(e)=> setSearchValue(e.target.value)} label='Pesquisar por Estudante ou Curso' placeholder='Digite o Nome do Estudante ou o Curso (pressione "Enter" para pesquisar)' className='w-full'/>
             </Grid>
         </Grid>
