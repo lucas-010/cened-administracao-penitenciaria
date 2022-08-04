@@ -15,11 +15,11 @@ export default function LoginAccess() {
                 <input placeholder='Senha' id='user-password' type="password" className='p-2 outline-none border-4 lg:w-96 md:w-80 w-11/12 rounded-lg border-green-500'/>
             </div>
             
-              <button className='text-xl mt-5 md:ml-10 lg:ml-10 text-white border-4 px-4 rounded-lg hover:bg-green-500 transition-colors font-medium border-green-500'>
-                <Link to={'/matriculas'}>
+              <Link className='text-xl flex items-center mt-5 md:ml-10 lg:ml-10 text-white border-4 px-4 rounded-lg hover:bg-green-500 transition-colors font-medium border-green-500' to={'/matriculas'}>
+                <button className=''>
                   Acessar
-                </Link>
-              </button>
+                </button>
+              </Link>
         </div>
     </div>
   )
