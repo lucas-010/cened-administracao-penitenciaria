@@ -151,7 +151,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <tr className='hover:bg-gray-100 print:rounded-lg print:border border-gray-300 print:mt-2 print:flex-col print:flex' key={row.code}>
+                  <tr className='hover:bg-gray-100 print:rounded-lg print:border border-gray-300 print:mt-5 print:flex-col print:flex' key={row.code}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
