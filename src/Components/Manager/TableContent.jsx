@@ -63,7 +63,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
           id: student.aluno.id,
           datam: student.dataMatricula ? new Date(student.dataMatricula).toLocaleDateString('pt-br') : 'N/D',
           name: `${student.aluno.nome} | CPF: ${student.aluno.cpf}`,
-          course: `${student.curso.codigo} | ${student.curso.nome}`,
+          course: `${student.curso.codigo} | ${student.curso.nome} | ${student.curso.cargaHoraria} h`,
           init: student.inicioCurso ? new Date(student.inicioCurso).toLocaleDateString('pt-br') : 'N/D',
           end: student.terminoCurso ? new Date(student.terminoCurso).toLocaleDateString('pt-br') : 'N/D',
           situation: student.statusCursoDescricao,
@@ -75,6 +75,7 @@ export default function TableContent({searchValueChange, date1, date2, date3, da
     setPage(0)
     axios.get(`${api}/documentos/consultas/matriculas?IdPenitenciaria=${idPeni}${searchValueChange !== '' ? `&Search=${searchValueChange}` : ''}${statusCourse !== 0 ? `&StatusCurso=${statusCourse}` : ''}${date1 !== '' ? `&PeriodoDataMatricula.Inicio=${date1}` : ''}${date2 ? `&PeriodoDataMatricula.Final=${date2}` : ''}${date3 !== '' ? `&PeriodoDataInicioCurso.Inicio=${date3}` : ''}${date4 !== '' ? `&PeriodoDataInicioCurso.Final=${date4}` : ''}&limit=1000`).then(response=>{
       formatStudentsAddRow(response.data)
+      console.log(response.data)
     })
   }, [idPeni, date1, date2, date3, date4, searchValueChange, statusCourse])
 
